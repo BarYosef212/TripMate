@@ -1,6 +1,12 @@
 import express from 'express';
 import * as UserControllers from '../controllers/user.controller.js';
-import { verifyToken } from '../middlewares/auth.js';
+
+/**
+ * @swagger
+ * tags:
+ *   name: User
+ *   description: API endpoints for managing users
+ */
 
 const router = express.Router();
 

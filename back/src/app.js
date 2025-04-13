@@ -6,6 +6,7 @@ import swaggerSpec from './docs/swagger.js';
 import logger from './config/logger.js'
 import * as dotenv from 'dotenv';
 import userRoutes from './routes/user.route.js'
+import tripRoutes from './routes/trip.route.js'
 dotenv.config({ path: '.env' });
 
 const app = express();
@@ -17,6 +18,7 @@ const init = async () => {
         app.use(express.json());
         app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
         app.use('/api', userRoutes)
+        app.use('/api', tripRoutes)
         logger.info('app initialized');
     } catch (error) {
         logger.error('Error during app initialization:', error);
