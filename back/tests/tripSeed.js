@@ -134,7 +134,13 @@ const seedTrips = async () => {
   console.log("30 trips inserted");
 };
 
-seedTrips().catch((err) => {
-  console.error("Seeding failed:", err);
-  mongoose.disconnect();
-});
+seedTrips()
+  .then(() => {
+    console.log("Seeding completed successfully.");
+  })
+  .catch((err) => {
+    console.error("Seeding failed:", err);
+  })
+  .finally(() => {
+    mongoose.disconnect();
+  });
