@@ -1,7 +1,6 @@
 import * as TripService from '../services/trip.service.js';
 import HTTP from '../constants/status.js';
 import sendErrorResponse from '../utils/errorHandler.js'
-import logger from '../config/logger.js';
 
 export const createTrip = async (req, res) => {
   try {

@@ -1,11 +1,9 @@
 import mongoose from "mongoose";
-import User from "../src/models/user.model.js"; // adjust path if needed
+import User from "../src/models/user.model.js";
 import bcrypt from "bcrypt";
 import dotenv from "dotenv";
 dotenv.config({ path: './.env' });
 
-
-// connect to your MongoDB
 await mongoose.connect(process.env.MONGO_URI);
 
 const genders = ["male", "female"];
@@ -30,8 +28,8 @@ const createRandomUser = async (index) => {
     location: {
       type: "Point",
       coordinates: [
-        (Math.random() * 360 - 180).toFixed(6), // longitude
-        (Math.random() * 180 - 90).toFixed(6)   // latitude
+        (Math.random() * 360 - 180).toFixed(6), 
+        (Math.random() * 180 - 90).toFixed(6)   
       ]
     },
     travelPreferences: {
