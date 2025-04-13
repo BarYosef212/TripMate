@@ -36,5 +36,5 @@ const tripSchema = new mongoose.Schema({
   
 tripSchema.index({ 'destination.city': 1, 'travelDates.start': 1 });
   
-module.exports = mongoose.model('Trip', tripSchema);
+export default mongoose.model('Trip', tripSchema);
   
