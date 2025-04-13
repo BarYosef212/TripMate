@@ -131,8 +131,7 @@ const seedTrips = async () => {
   }
 
   await Trip.insertMany(trips);
-  console.log("30 rips inserted");
-  mongoose.disconnect();
+  console.log("30 trips inserted");
 };
 
 seedTrips().catch((err) => {
