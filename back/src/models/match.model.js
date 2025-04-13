@@ -7,8 +7,6 @@ const matchSchema = new mongoose.Schema({
     status: { type: String, enum: ['pending', 'accepted', 'declined'], default: 'pending' },
     matchedAt: { type: Date, default: Date.now },
     compatibilityScore: { type: Number, min: 0, max: 100 },
-    mutualInterests: [String],
-    sharedPreferences: { type: mongoose.Schema.Types.Mixed },
     locationProximityScore: { type: Number, min: 0, max: 100 },
   });
   

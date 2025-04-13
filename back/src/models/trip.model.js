@@ -14,7 +14,7 @@ const tripSchema = new mongoose.Schema({
       start: { type: Date, required: true },
       end: { type: Date, required: true }
     },
-    groupSize: Number,
+    groupSize: { type: Number, min: 1 },
     description: String,
     itinerary: [{
       day: Number,
